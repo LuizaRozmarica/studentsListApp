@@ -16,7 +16,7 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        students = realm.objects(Student.self)
+        students = realm?.objects(Student.self)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editing))
     }
     
