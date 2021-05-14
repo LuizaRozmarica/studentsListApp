@@ -71,19 +71,67 @@
 		2046B5DE2636EC1000EE9E85 /* studentsList */ = {
 			isa = PBXGroup;
 			children = (
+				20AF18D8264DAC6D00EC21F6 /* Application */,
+				20AF18D9264DAC7700EC21F6 /* Models */,
+				20AF18DA264DAC8300EC21F6 /* Views */,
+				20AF18DB264DAC8E00EC21F6 /* Controllers */,
+				20AF18DC264DAC9600EC21F6 /* Storyboards */,
+				20AF18DD264DACA000EC21F6 /* Resources */,
+			);
+			path = studentsList;
+			sourceTree = "<group>";
+		};
+		20AF18D8264DAC6D00EC21F6 /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				2046B5DF2636EC1000EE9E85 /* AppDelegate.swift */,
 				2046B5E12636EC1000EE9E85 /* SceneDelegate.swift */,
-				2046B5F52636EFCE00EE9E85 /* MainTableViewController.swift */,
-				2046B5FB2637052200EE9E85 /* CustomTableViewCell.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		20AF18D9264DAC7700EC21F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				2046B5F82636FD5000EE9E85 /* StudentModel.swift */,
 				200FDFA2263D8F41007DA42C /* StorageManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		20AF18DA264DAC8300EC21F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2046B5FB2637052200EE9E85 /* CustomTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		20AF18DB264DAC8E00EC21F6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2046B5F52636EFCE00EE9E85 /* MainTableViewController.swift */,
 				2046B5FE2637C33A00EE9E85 /* EditVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		20AF18DC264DAC9600EC21F6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
 				2046B5E52636EC1000EE9E85 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		20AF18DD264DACA000EC21F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				2046B5E82636EC1200EE9E85 /* Assets.xcassets */,
 				2046B5EA2636EC1200EE9E85 /* LaunchScreen.storyboard */,
 				2046B5ED2636EC1200EE9E85 /* Info.plist */,
 			);
-			path = studentsList;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4E499201518618BD67BBCE76 /* Pods */ = {
@@ -373,7 +421,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PRYG4Q3PW;
-				INFOPLIST_FILE = studentsList/Info.plist;
+				INFOPLIST_FILE = studentsList/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,7 +442,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PRYG4Q3PW;
-				INFOPLIST_FILE = studentsList/Info.plist;
+				INFOPLIST_FILE = studentsList/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

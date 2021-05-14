@@ -31,13 +31,16 @@ class MainTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-
-        let student = students[indexPath.row]
-        cell.nameLabel.text = student.name + " " + student.lastName
-        cell.markLabel.text = student.mark
-
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? CustomTableViewCell {
+            
+            let student = students[indexPath.row]
+            cell.nameLabel.text = student.name + " " + student.lastName
+            cell.markLabel.text = student.mark
+            
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     // MARK: - UITableViewDelegate
@@ -69,7 +72,7 @@ class MainTableViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let student = students[indexPath.row]
-            let vc = segue.destination as! EditVC
+            guard let vc = segue.destination as? EditVC else { return }
             vc.currentStudent = student
         }
     }

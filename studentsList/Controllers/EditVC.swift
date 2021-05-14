@@ -32,9 +32,9 @@ class EditVC: UITableViewController {
         
         //кнопка "сохранить" отключена, пока поля не заполнены корректно
         saveButton.isEnabled = false
-        nameTextField.addTarget(self, action: #selector(tfEditingChanged), for: .editingDidEnd)
-        lastNameTextField.addTarget(self, action: #selector(tfEditingChanged), for: .editingDidEnd)
-        markTextField.addTarget(self, action: #selector(tfEditingChanged), for: .editingDidEnd)
+        nameTextField.addTarget(self, action: #selector(tfEditingChanged), for: .editingChanged)
+        lastNameTextField.addTarget(self, action: #selector(tfEditingChanged), for: .editingChanged)
+        markTextField.addTarget(self, action: #selector(tfEditingChanged), for: .editingChanged)
         
         //экран редактирования ученика
         setupEditScreen()
@@ -109,14 +109,23 @@ class EditVC: UITableViewController {
     //сохранение ученика
     func saveStudent() {
         
-        let newStudent = Student(name: nameTextField.text!, lastName: lastNameTextField.text!, mark: markTextField.text!)
+        guard let name = nameTextField.text,
+              let lastname = lastNameTextField.text,
+              let mark = markTextField.text
+        else { return }
+        
+        let newStudent = Student(name: name, lastName: lastname, mark: mark)
         
         if currentStudent != nil {
             //в режиме редактирования ученика
-            try! realm.write {
-                currentStudent?.name = newStudent.name
-                currentStudent?.lastName = newStudent.lastName
-                currentStudent?.mark = newStudent.mark
+            do {
+                try realm?.write {
+                    currentStudent?.name = newStudent.name
+                    currentStudent?.lastName = newStudent.lastName
+                    currentStudent?.mark = newStudent.mark
+                }
+            } catch {
+                print("Failed to overwrite")
             }
         } else {
             //в режиме добавления нового ученика
