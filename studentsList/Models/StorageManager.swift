@@ -32,6 +32,7 @@ class StorageManager {
             print("Failed to delete")
             
         }
+    }
 }
 
 extension Realm {
